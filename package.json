@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npx cap sync",
+    "build": "next build",
     "start": "next start",
-    "serve": "npx serve@latest out",
-    "lint": "eslint",
+    "serve": "npm run build && npx serve@latest out",
     "build-apk": "npm run build && bash ./scripts/build_apk.sh",
-    "start-apk": "npm run build && bash ./scripts/start_apk.sh"
+    "start-apk": "npm run build && bash ./scripts/start_apk.sh",
+    "lint": "eslint"
   },
   "dependencies": {
     "@capacitor/android": "^8.3.4",
