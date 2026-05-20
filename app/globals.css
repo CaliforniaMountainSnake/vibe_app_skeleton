@@ -128,3 +128,8 @@
     @apply font-sans;
   }
 }
+
+/* Safe-area padding for edge-to-edge on mobile (Capacitor) */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
