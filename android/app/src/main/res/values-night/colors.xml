@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#CCCCCC</color>
+    <color name="colorAccent">#FFFFFF</color>
+
+    <!-- Dark theme colors -->
+    <color name="colorBackground">#1A1A1A</color>
+    <color name="colorSurface">#2D2D2D</color>
+    <color name="colorOnBackground">#FFFFFF</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+
+    <!-- Navigation bar colors for dark theme -->
+    <color name="navigationBarColor">#1A1A1A</color>
+    <color name="navigationBarDividerColor">#333333</color>
+</resources>
