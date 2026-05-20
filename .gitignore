@@ -4,6 +4,9 @@
 /.idea
 /.vscode
 
+# coding agents
+/.pi_sessions
+
 # dependencies
 /node_modules
 /.pnp
