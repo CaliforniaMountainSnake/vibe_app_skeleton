@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "serve": "npm run build && npx serve@latest out",
-    "build-apk": "npm run build && bash ./scripts/build_apk.sh",
+    "build-apk": "npm run build && npx cap sync && bash ./scripts/build_apk.sh",
     "start-apk": "npm run build && bash ./scripts/start_apk.sh",
     "lint": "eslint"
   },
