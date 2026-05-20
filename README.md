@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vibe App Skeleton
 
-## Getting Started
+Приложение-скелетон для быстрого создания HTML/JS веб-приложений с возможностью сборки в APK для Android.
 
-First, run the development server:
+Используйте этот проект как основу для своих идей — вся инфраструктура уже настроена, остаётся только писать код.
+
+Минимальная поддерживаемая версия Android: **7.0** (API level 24).
+
+## Возможности
+
+- 🌐 **Веб-приложение** — современный стек с Next.js и React
+- 📱 **APK для Android** — сборка нативного Android-приложения из веб-кода через Capacitor
+- 🎨 **UI-компоненты** — готовая библиотека shadcn/ui с Tailwind CSS
+- 🌓 **Автоматическая тема** — дневная/ночная тема переключается по системным настройкам устройства (в том числе в Android-приложении через Capacitor)
+- ⚡ **Быстрый старт** — клонируй и начинай разработку сразу
+
+## Технологии
+
+| Технология | Назначение |
+|---|---|
+| [Next.js](https://nextjs.org) | React-фреймворк (App Router) |
+| [React](https://react.dev) | UI-библиотека |
+| [TypeScript](https://www.typescriptlang.org) | Типизация |
+| [Tailwind CSS](https://tailwindcss.com) | Утилитарный CSS-фреймворк |
+| [shadcn/ui](https://ui.shadcn.com) | Библиотека готовых UI-компонентов |
+| [Lucide React](https://lucide.dev) | Иконки |
+| [Capacitor](https://capacitorjs.com) | Обёртка веб-приложения в нативное Android-приложение |
+| [Radix UI](https://www.radix-ui.com) | Безголовые (headless) примитивы для shadcn/ui |
+
+## Команды
+
+| Команда | Описание |
+|---|---|
+| `npm run dev` | Запуск сервера разработки (http://localhost:3000) |
+| `npm run build` | Сборка production-бандла Next.js |
+| `npm run start` | Запуск production-сервера |
+| `npm run serve` | Сборка и запуск статической версии через `serve` |
+| `npm run lint` | Проверка кода линтером (ESLint) |
+| `npm run build-apk` | Сборка APK (debug) |
+| `npm run start-apk` | Запуск приложения на подключённом Android-устройстве/эмуляторе |
+
+### Сборка APK
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build-apk
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Готовый APK-файл будет находиться в `android/app/build/outputs/apk/debug/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Для сборки APK требуются:
+- Java JDK 21
+- Android SDK (переменная окружения `ANDROID_HOME`)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Запуск на устройстве
 
-## Learn More
+```bash
+npm run start-apk
+```
 
-To learn more about Next.js, take a look at the following resources:
+Соберёт проект и сразу запустит на подключённом Android-устройстве или эмуляторе.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Структура проекта
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+├── app/            # Страницы и роутинг Next.js (App Router)
+├── components/     # UI-компоненты (shadcn/ui)
+├── lib/            # Утилиты и хелперы
+├── public/         # Статические файлы
+├── scripts/        # Bash-скрипты для сборки APK
+├── android/        # Нативный Android-проект Capacitor
+└── capacitor.config.ts  # Конфигурация Capacitor
+```
 
-## Deploy on Vercel
+## Быстрый старт
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Установка зависимостей
+npm install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Запуск в режиме разработки
+npm run dev
+```
+
+Откройте [http://localhost:3000](http://localhost:3000) и начинайте редактировать `app/page.tsx` — изменения отображаются мгновенно.
