@@ -113,6 +113,68 @@ const eslintConfig = defineConfig([
 
       // Все ветки должны возвращать значение или ни одна
       'consistent-return': 'error',
+
+      // --- Потенциальные баги ---
+
+      // Код после return/throw — недостижим
+      'no-unreachable': 'error',
+
+      // Сравнение с собой — опечатка при копипасте
+      'no-self-compare': 'error',
+
+      // '${name}' в обычной строке — забыли бэктики
+      'no-template-curly-in-string': 'error',
+
+      // Пропущенные элементы в массиве [1,,3]
+      'no-sparse-arrays': 'error',
+
+      // throw 'message' вместо throw new Error()
+      'no-throw-literal': 'error',
+
+      // cond ? true : false — лишний тернарник
+      'no-unneeded-ternary': 'error',
+
+      // Условие-константа — всегда true или false
+      'no-constant-binary-expression': 'error',
+
+      // --- Читаемость ---
+
+      // Тернарник в тернарнике — нечитаемо
+      'no-nested-ternary': 'error',
+
+      // else после return — лишний отступ
+      'no-else-return': 'error',
+
+      // Одинокий if внутри else — инвертируй условие
+      'no-lonely-if': 'warn',
+
+      // Пустые функции — забыли реализовать
+      'no-empty-function': 'error',
+
+      // Пустой constructor() {} — не нужен
+      'no-useless-constructor': 'error',
+
+      // --- Асинхронщина ---
+
+      // async без await внутри — бессмысленно
+      'require-await': 'error',
+
+      // return await — лишнее
+      'no-return-await': 'error',
+
+      // new Promise(async ...) — антипаттерн
+      'no-async-promise-executor': 'error',
+
+      // --- React ---
+
+      // Фрагмент вокруг одного элемента
+      'react/jsx-no-useless-fragment': 'warn',
+
+      // <Comp></Comp> → <Comp />
+      'react/self-closing-comp': 'warn',
+
+      // disabled={true} → disabled
+      'react/jsx-boolean-value': 'warn',
     },
   },
 
@@ -132,6 +194,7 @@ const eslintConfig = defineConfig([
     rules: {
       'no-magic-numbers': 'off',
       'max-lines-per-function': 'off',
+      'no-nested-ternary': 'off',
     },
   },
 
