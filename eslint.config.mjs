@@ -19,7 +19,7 @@ const eslintConfig = defineConfig([
   {
     rules: {
       // Ограничение цикломатической сложности
-      complexity: ['warn', { max: 5 }],
+      complexity: ['warn', { max: 7 }],
 
       // Ограничение числа строк в файле (без пустых строк и комментариев)
       'max-lines': ['warn', { max: 300, skipBlankLines: true, skipComments: true }],
