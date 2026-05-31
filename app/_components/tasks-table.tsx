@@ -22,25 +22,32 @@ const tasks = [
 
 const statusVariant = (status: string) => {
   switch (status) {
-    case 'Done':
+    case 'Done': {
       return 'default' as const
-    case 'In Progress':
+    }
+    case 'In Progress': {
       return 'secondary' as const
-    case 'Review':
+    }
+    case 'Review': {
       return 'outline' as const
-    default:
+    }
+    default: {
       return 'outline' as const
+    }
   }
 }
 
 const priorityVariant = (priority: string) => {
   switch (priority) {
-    case 'High':
+    case 'High': {
       return 'default' as const
-    case 'Medium':
+    }
+    case 'Medium': {
       return 'secondary' as const
-    default:
+    }
+    default: {
       return 'outline' as const
+    }
   }
 }
 
