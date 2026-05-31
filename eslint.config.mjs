@@ -3,6 +3,7 @@ import nextVitals from 'eslint-config-next/core-web-vitals'
 import nextTs from 'eslint-config-next/typescript'
 import prettier from 'eslint-config-prettier'
 import sonarjs from 'eslint-plugin-sonarjs'
+import unicorn from 'eslint-plugin-unicorn'
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -16,11 +17,16 @@ const eslintConfig = defineConfig([
     'next-env.d.ts',
     'android/**',
     'eslint.config.mjs',
+    'components/ui/**',
   ]),
+
+  // Unicorn recommended rules
+  unicorn.configs['flat/recommended'],
 
   {
     plugins: {
       sonarjs,
+      unicorn,
     },
     rules: {
       // Ограничение когнитивной сложности
@@ -190,16 +196,6 @@ const eslintConfig = defineConfig([
       'no-magic-numbers': 'off',
       'no-console': 'off',
       'max-lines-per-function': 'off',
-    },
-  },
-
-  // Слабее для shadcn/ui компонентов — мы их не контролируем
-  {
-    files: ['components/ui/**'],
-    rules: {
-      'no-magic-numbers': 'off',
-      'max-lines-per-function': 'off',
-      'no-nested-ternary': 'off',
     },
   },
 

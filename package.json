@@ -43,6 +43,7 @@
     "eslint-config-next": "16.2.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-sonarjs": "^4.0.3",
+    "eslint-plugin-unicorn": "^64.0.0",
     "prettier": "^3.8.3",
     "tailwindcss": "^4",
     "typescript": "^5",
