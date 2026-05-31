@@ -2,6 +2,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import nextVitals from 'eslint-config-next/core-web-vitals'
 import nextTs from 'eslint-config-next/typescript'
 import prettier from 'eslint-config-prettier'
+import sonarjs from 'eslint-plugin-sonarjs'
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -14,12 +15,22 @@ const eslintConfig = defineConfig([
     'build/**',
     'next-env.d.ts',
     'android/**',
+    'eslint.config.mjs',
   ]),
 
   {
+    plugins: {
+      sonarjs,
+    },
     rules: {
+      // Ограничение когнитивной сложности
+      'sonarjs/cognitive-complexity': ['warn', 3],
+
       // Ограничение цикломатической сложности
       complexity: ['warn', { max: 7 }],
+
+      // Ограничение уровней вложенности блоков
+      'max-depth': ['warn', { max: 3 }],
 
       // Ограничение числа строк в файле (без пустых строк и комментариев)
       'max-lines': ['warn', { max: 300, skipBlankLines: true, skipComments: true }],
@@ -41,9 +52,6 @@ const eslintConfig = defineConfig([
 
       // Ограничение уровней вложенных колбэков
       'max-nested-callbacks': ['warn', { max: 3 }],
-
-      // Ограничение уровней вложенности блоков
-      'max-depth': ['warn', { max: 3 }],
 
       // Магические числа — в именованные константы
       'no-magic-numbers': [
