@@ -21,7 +21,7 @@ const eslintConfig = defineConfig([
   ]),
 
   // Unicorn recommended rules
-  unicorn.configs['flat/recommended'],
+  unicorn.configs['recommended'],
 
   {
     plugins: {
